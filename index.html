@@ -1,0 +1,1343 @@
+
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1220">
+
+<title>Юрий Рогов — Директор по развитию бизнеса</title>
+
+<style>
+:root {
+  --bg: #0b1220;
+  --bg2: #111d30;
+  --card: #17243a;
+  --line: #2c3b51;
+  --text: #edf3fb;
+  --muted: #a2b1c5;
+  --accent: #54d9df;
+  --accent2: #818cf8;
+  --green: #58d7a0;
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      #172f48 0%,
+      transparent 35%
+    ),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+  padding: 35px 24px 90px;
+}
+
+/* HEADER */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 65px 55px;
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 62, 96, .85),
+      rgba(13, 23, 40, .96)
+    );
+  box-shadow: 0 25px 70px rgba(0,0,0,.25);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  right: -130px;
+  top: -150px;
+  background: var(--accent);
+  opacity: .10;
+  filter: blur(65px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.eyebrow {
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 66px);
+  line-height: 1.1;
+  margin: 18px 0;
+  letter-spacing: -1.5px;
+
+  background: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #8ce9eb 52%,
+    #8995ff 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+  color: #d6e4f2;
+  font-size: clamp(19px, 3vw, 26px);
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.contact span,
+.contact a {
+  padding: 9px 15px;
+  border-radius: 30px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: #e5efff;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    110deg,
+    var(--accent),
+    var(--accent2)
+  );
+  color: #091425;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+  text-decoration: none;
+}
+
+/* SECTIONS */
+
+section {
+  margin-top: 65px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.section-num {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.section-head h2 {
+  font-size: clamp(22px, 3vw, 28px);
+  margin: 0;
+  letter-spacing: -.5px;
+}
+
+.section-head::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--accent2),
+    transparent
+  );
+}
+
+.profile {
+  padding: 30px;
+  background: rgba(255,255,255,.025);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  color: #d6e1ed;
+  font-size: 17px;
+}
+
+/* ACHIEVEMENT CARDS */
+
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.achievement {
+  padding: 28px;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    145deg,
+    #1c304a,
+    #121d30
+  );
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.achievement:hover {
+  transform: translateY(-9px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(0,0,0,.3);
+}
+
+.achievement::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent2)
+  );
+}
+
+.metric {
+  font-size: clamp(31px, 4vw, 43px);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.achievement h3 {
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+
+.achievement p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.achievement .company {
+  display: block;
+  color: var(--accent2);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+/* SKILLS TAGS */
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill {
+  padding: 11px 17px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: #dce9f5;
+  font-size: 14px;
+  transition: all .3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  background: rgba(84,217,223,.12);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* TIMELINE */
+
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(
+    var(--accent),
+    var(--accent2),
+    transparent
+  );
+}
+
+.job {
+  position: relative;
+  padding: 27px 30px;
+  margin-bottom: 23px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--line);
+  transition: .3s;
+}
+
+.job::before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 35px;
+  width: 13px;
+  height: 13px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+  box-sizing: border-box;
+}
+
+.job:hover {
+  border-color: #55718d;
+  transform: translateX(5px);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.job h3 {
+  font-size: 19px;
+  margin: 0;
+}
+
+.role {
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.period {
+  color: #b4c3d9;
+  font-size: 13px;
+  padding: 7px 12px;
+  background: rgba(255,255,255,.05);
+  border-radius: 9px;
+}
+
+.job p {
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+.job ul {
+  padding-left: 20px;
+  color: #d0dcec;
+}
+
+.job li {
+  margin: 9px 0;
+  padding-left: 3px;
+}
+
+.job li::marker {
+  color: var(--accent);
+}
+
+/* RESULT CASE */
+
+.result {
+  margin-top: 20px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(84,217,223,.10),
+    rgba(129,140,248,.05)
+  );
+  border-left: 3px solid var(--green);
+  font-size: 14px;
+  color: #e4f3f5;
+}
+
+.result strong {
+  color: var(--green);
+}
+
+/* EDUCATION */
+
+.education {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.edu-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  transition: .3s;
+}
+
+.edu-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-4px);
+}
+
+.edu-year {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.edu-card h3 {
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.edu-card p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ADDITIONAL */
+
+.extra {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.extra-item {
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+}
+
+.extra-item strong {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+
+.extra-item span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 80px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* REVEAL ANIMATION */
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity .65s ease,
+    transform .65s ease;
+}
+
+.js-ready .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .achievements {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 45px 32px;
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    padding: 15px 15px 50px;
+  }
+
+  .hero {
+    padding: 35px 23px;
+    border-radius: 18px;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education,
+  .extra {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 23px;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .job::before {
+    left: -25px;
+  }
+
+  .job {
+    padding: 21px;
+  }
+
+  .section-head h2 {
+    font-size: 21px;
+  }
+
+  .profile {
+    padding: 22px;
+    font-size: 15px;
+  }
+
+  section {
+    margin-top: 45px;
+  }
+}
+
+/* PRINT / PDF */
+
+@media print {
+  :root {
+    --bg: #fff;
+    --bg2: #fff;
+    --card: #fff;
+    --line: #d8dee7;
+    --text: #182235;
+    --muted: #45536b;
+    --accent: #176c85;
+    --accent2: #4256a8;
+    --green: #176b4f;
+  }
+
+  body {
+    background: white !important;
+    color: #182235;
+    font-size: 11px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .hero,
+  .job,
+  .achievement,
+  .edu-card,
+  .extra-item,
+  .profile {
+    box-shadow: none !important;
+    color: #182235;
+    background: white !important;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    background: none;
+    color: #182235;
+    -webkit-text-fill-color: #182235;
+    font-size: 34px;
+  }
+
+  .hero h2,
+  .job h3,
+  .achievement h3,
+  .section-head h2 {
+    color: #182235;
+  }
+
+  .contact a,
+  .contact span,
+  .status,
+  .job ul,
+  .job p,
+  .achievement p,
+  .edu-card p,
+  .extra-item span {
+    color: #34445c;
+  }
+
+  .skill {
+    background: #f2f5f9;
+    color: #182235;
+  }
+
+  .hero-actions {
+    display: none;
+  }
+
+  .reveal,
+  .js-ready .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .job,
+  .achievement,
+  .edu-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  section {
+    margin-top: 25px;
+  }
+
+  footer {
+    margin-top: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="eyebrow">
+    Executive Resume / Business Development
+  </div>
+
+  <h1>ЮРИЙ ЛЕОНИДОВИЧ<br>РОГОВ</h1>
+
+  <h2>ДИРЕКТОР ПО РАЗВИТИЮ БИЗНЕСА</h2>
+
+  <div class="contact">
+    <span>Москва</span>
+
+    <a href="tel:+79096705500">
+      +7 (909) 670-55-00
+    </a>
+
+    <a href="mailto:yury74@mail.ru">
+      yury74@mail.ru
+    </a>
+  </div>
+
+  <div class="status">
+    Полная занятость · Командировки ·
+    Возможен переезд: Санкт-Петербург, Луганск
+  </div>
+
+  <div class="hero-actions">
+    <a href="#experience" class="btn btn-primary">
+      Профессиональный опыт
+    </a>
+
+    <button class="btn" onclick="window.print()">
+      Сохранить в PDF / Печать
+    </button>
+  </div>
+</header>
+
+<!-- PROFILE -->
+
+<section class="reveal" id="profile">
+
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2>Профессиональный профиль</h2>
+  </div>
+
+  <div class="profile">
+    Руководитель с более чем
+    <strong>20-летним опытом</strong>
+    в промышленном, нефтегазовом и страховом
+    секторах.
+
+    Специализация — запуск и развитие
+    коммерческих направлений,
+    B2B-продажи и оптовая дистрибуция,
+    вывод новых продуктов,
+    построение дилерских сетей
+    и организация контрактного производства.
+
+    <p>
+      Опыт управления командами
+      <strong>до 220 человек</strong>.
+      Цель — развитие действующего бизнеса
+      или запуск новых проектов;
+      приоритет — B2B и дистрибуция,
+      открыт к другим отраслям.
+    </p>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+
+<section class="reveal" id="achievements">
+
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2>Ключевые достижения</h2>
+  </div>
+
+  <div class="achievements">
+
+    <article class="achievement">
+      <span class="company">ГАЗЛЮКС ТРЕЙД</span>
+
+      <div class="metric">30 млн ₽</div>
+
+      <h3>Максимальная месячная выручка</h3>
+
+      <p>
+        Запуск бизнеса под собственным брендом.
+        Продажи в большинстве регионов России.
+        Команда более 50 человек.
+        Прибыльная деятельность.
+      </p>
+    </article>
+
+    <article class="achievement">
+      <span class="company">САЯНЫ БИЛДИНГ</span>
+
+      <div class="metric">20+</div>
+
+      <h3>Дилерских партнёров</h3>
+
+      <p>
+        Разработка собственной продуктовой линейки.
+        Организация контрактного производства.
+        Максимальная месячная выручка —
+        12 млн ₽. Прибыльная деятельность.
+      </p>
+    </article>
+
+    <article class="achievement">
+      <span class="company">СОГАЗ</span>
+
+      <div class="metric">×4,7</div>
+
+      <h3>Рост страховых сборов</h3>
+
+      <p>
+        Рост со 150 до 700 млн ₽
+        в 2005–2008 годах.
+        Руководство коллективом
+        численностью 220 человек.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="reveal" id="competencies">
+
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2>Ключевые компетенции</h2>
+  </div>
+
+  <div class="skills">
+    <span class="skill">Развитие бизнеса</span>
+    <span class="skill">Запуск новых направлений</span>
+    <span class="skill">B2B-продажи</span>
+    <span class="skill">Оптовая торговля</span>
+    <span class="skill">Дилерские сети</span>
+    <span class="skill">Коммерческая стратегия</span>
+    <span class="skill">Вывод продуктов на рынок</span>
+    <span class="skill">Контрактное производство</span>
+    <span class="skill">Региональное развитие</span>
+    <span class="skill">Тендерные продажи</span>
+    <span class="skill">Бизнес-планирование</span>
+    <span class="skill">Управление командами и процессами</span>
+  </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="reveal" id="experience">
+
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2>Профессиональный опыт</h2>
+  </div>
+
+  <div class="timeline">
+
+    <!-- CONSULTING -->
+
+    <article class="job">
+      <div class="job-header">
+        <div>
+          <h3>Независимая консультационная деятельность</h3>
+          <div class="role">
+            Консультант по фондовым рынкам
+          </div>
+        </div>
+
+        <span class="period">
+          Март 2020 — настоящее время
+        </span>
+      </div>
+
+      <p>
+        Консультирование частных инвесторов.
+        В 2020–2022 годах деятельность
+        развивалась параллельно с постепенным
+        завершением операционного управления
+        бизнесом.
+      </p>
+
+      <ul>
+        <li>
+          Анализ финансовых рынков,
+          инвестиционных инструментов и рисков.
+        </li>
+
+        <li>
+          Подготовка индивидуальных рекомендаций
+          по структуре портфелей, мониторинг
+          и рекомендации по ребалансировке.
+        </li>
+      </ul>
+    </article>
+
+    <!-- SAYANY -->
+
+    <article class="job">
+      <div class="job-header">
+        <div>
+          <h3>ООО «САЯНЫ Билдинг», Москва</h3>
+          <div class="role">Генеральный директор</div>
+        </div>
+
+        <span class="period">
+          Сентябрь 2012 — декабрь 2022
+        </span>
+      </div>
+
+      <p>
+        Создание и развитие бизнеса в сегменте
+        газоизмерительного оборудования;
+        команда до 10 человек.
+      </p>
+
+      <ul>
+        <li>
+          Разработка собственной линейки
+          измерительных приборов и её вывод
+          на российский рынок.
+        </li>
+
+        <li>
+          Организация контрактного производства
+          на сторонних предприятиях.
+        </li>
+
+        <li>
+          Формирование дилерских каналов
+          и развитие региональных B2B-продаж.
+        </li>
+      </ul>
+
+      <div class="result">
+        <strong>Результат:</strong>
+        более 20 дилерских партнёров;
+        максимальная месячная выручка —
+        12 млн ₽; прибыльная деятельность.
+      </div>
+    </article>
+
+    <!-- GAZLUX -->
+
+    <article class="job">
+      <div class="job-header">
+        <div>
+          <h3>ООО «ГАЗЛЮКС Трейд», Москва</h3>
+          <div class="role">Генеральный директор</div>
+        </div>
+
+        <span class="period">
+          Июль 2010 — август 2012
+        </span>
+      </div>
+
+      <p>
+        Запуск и развитие бизнеса по поставкам
+        внутридомового газового оборудования
+        под собственным брендом;
+        команда более 50 человек.
+      </p>
+
+      <ul>
+        <li>
+          Формирование продуктовой линейки
+          и техническая доработка оборудования.
+        </li>
+
+        <li>
+          Работа с производителями и поставщиками
+          из России, Италии и Китая.
+        </li>
+
+        <li>
+          Развитие прямых продаж
+          газораспределительным организациям,
+          дилерских каналов и тендерных закупок.
+        </li>
+      </ul>
+
+      <div class="result">
+        <strong>Результат:</strong>
+        продажи в большинстве регионов России;
+        максимальная месячная выручка —
+        30 млн ₽; прибыльная деятельность.
+      </div>
+    </article>
+
+    <!-- GAZPROM -->
+
+    <article class="job">
+      <div class="job-header">
+        <div>
+          <h3>ООО «Газпром межрегионгаз», Москва</h3>
+
+          <div class="role">
+            Начальник отдела по корпоративной работе
+          </div>
+        </div>
+
+        <span class="period">
+          Февраль 2009 — июль 2010
+        </span>
+      </div>
+
+      <p>
+        Управление по имуществу и корпоративной работе.
+      </p>
+
+      <ul>
+        <li>
+          Анализ корпоративных и проблемных активов;
+          подготовка мер по восстановлению их качества.
+        </li>
+
+        <li>
+          Проработка сделок приобретения и продажи
+          активов, вопросов банкротства и сокращения
+          проблемных непрофильных активов.
+        </li>
+      </ul>
+    </article>
+
+    <!-- SOGAZ DIRECTOR -->
+
+    <article class="job">
+      <div class="job-header">
+        <div>
+          <h3>ОАО «СОГАЗ», Центральный филиал</h3>
+          <div class="role">Директор филиала</div>
+        </div>
+
+        <span class="period">
+          Октябрь 2005 — сентябрь 2008
+        </span>
+      </div>
+
+      <p>
+        Руководство филиалом с численностью
+        персонала 220 человек.
+      </p>
+
+      <ul>
+        <li>
+          Реорганизация системы продаж
+          и мотивации сотрудников;
+          вывод новых страховых продуктов.
+        </li>
+
+        <li>
+          Развитие сети офисов, розничных продаж
+          и работы с государственными
+          и муниципальными заказчиками.
+        </li>
+
+        <li>
+          Финансовое планирование,
+          оптимизация процессов и создание
+          центра урегулирования убытков.
+        </li>
+      </ul>
+
+      <div class="result">
+        <strong>Результат:</strong>
+        рост страховых сборов со 150 до
+        700 млн ₽ за 2005–2008 годы
+        (в 4,7 раза).
+      </div>
+    </article>
+
+    <!-- SOGAZ INFORMATION -->
+
+    <article class="job">
+      <div class="job-header">
+        <div>
+          <h3>ОАО «СОГАЗ»</h3>
+
+          <div class="role">
+            Начальник отдела корпоративной информации
+          </div>
+        </div>
+
+        <span class="period">
+          Март 2003 — октябрь 2005
+        </span>
+      </div>
+
+      <ul>
+        <li>
+          Участие в проектах корпоративных
+          информационных систем, стратегии
+          и оптимизации процессов.
+        </li>
+
+        <li>
+          Инициирование и запуск аналитической
+          системы на платформе SAP BW.
+        </li>
+      </ul>
+    </article>
+
+    <!-- ZARUBEZHNEFT -->
+
+    <article class="job">
+      <div class="job-header">
+        <div>
+          <h3>ГП РВО «Зарубежнефть»</h3>
+
+          <div class="role">
+            Ведущий инженер отдела подготовки проектов
+          </div>
+        </div>
+
+        <span class="period">
+          Февраль 2002 — февраль 2003
+        </span>
+      </div>
+
+      <ul>
+        <li>
+          Анализ нефтегазовых проектов,
+          подготовка тендерной документации
+          и презентаций.
+        </li>
+      </ul>
+    </article>
+
+    <!-- KOMI -->
+
+    <article class="job">
+      <div class="job-header">
+        <div>
+          <h3>ЗАО «КомиАрктикОйл»</h3>
+
+          <div class="role">
+            Специалист по закупкам оборудования
+          </div>
+        </div>
+
+        <span class="period">
+          Ноябрь 1998 — декабрь 2000
+        </span>
+      </div>
+
+      <ul>
+        <li>
+          Работа с поставщиками, анализ цен,
+          договоры и контроль поставок.
+        </li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section class="reveal" id="education">
+
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <h2>Образование и подготовка</h2>
+  </div>
+
+  <div class="education">
+
+    <article class="edu-card">
+      <div class="edu-year">2001</div>
+
+      <h3>
+        Международная академия
+        маркетинга и менеджмента
+      </h3>
+
+      <p>Маркетинг</p>
+    </article>
+
+    <article class="edu-card">
+      <div class="edu-year">1998</div>
+
+      <h3>
+        Коми государственный
+        педагогический институт
+      </h3>
+
+      <p>Физика и вычислительная техника</p>
+    </article>
+
+    <article class="edu-card">
+      <div class="edu-year">2006</div>
+
+      <h3>
+        МГИМО — Школа страхового бизнеса
+      </h3>
+
+      <p>
+        Дополнительное профессиональное образование
+      </p>
+    </article>
+
+    <article class="edu-card">
+      <div class="edu-year">Профессиональные программы</div>
+
+      <h3>Дополнительная подготовка</h3>
+
+      <p>
+        Бизнес-планирование,
+        управление проектами,
+        SAP и SAP BW.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ADDITIONAL -->
+
+<section class="reveal" id="additional">
+
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <h2>Дополнительная информация</h2>
+  </div>
+
+  <div class="extra">
+
+    <div class="extra-item">
+      <strong>Языки</strong>
+      <span>
+        Русский — родной<br>
+        Английский — B1
+      </span>
+    </div>
+
+    <div class="extra-item">
+      <strong>Информационные технологии</strong>
+      <span>
+        Уверенный пользователь ПК.
+        SAP, SAP BW.
+      </span>
+    </div>
+
+    <div class="extra-item">
+      <strong>Искусственный интеллект</strong>
+      <span>
+        Активное использование инструментов
+        искусственного интеллекта (ИИ)
+        в профессиональной деятельности.
+      </span>
+    </div>
+
+    <div class="extra-item">
+      <strong>Прочая информация</strong>
+      <span>
+        Водительское удостоверение категорий A, B.
+        Рекомендации — по запросу.
+      </span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <strong>Юрий Леонидович Рогов</strong>
+  <div>Директор по развитию бизнеса</div>
+</footer>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Анимация появления блоков при прокрутке
+
+  if (!("IntersectionObserver" in window)) {
+    return;
+  }
+
+  document.documentElement.classList.add("js-ready");
+
+  const elements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -30px 0px"
+    }
+  );
+
+  elements.forEach(element => {
+    observer.observe(element);
+  });
+
+  // Перед печатью раскрываем все секции
+
+  window.addEventListener("beforeprint", () => {
+    elements.forEach(element => {
+      element.classList.add("visible");
+    });
+  });
+
+});
+</script>
+
+</body>
+</html>
